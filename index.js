@@ -1,3 +1,4 @@
+// Lampro Nepal AI Bot - Gemini 2.0 Flash
 const express = require("express");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const app = express();
@@ -34,10 +35,3 @@ app.post("/chat", async (req, res) => {
       model: "gemini-2.0-flash",
       systemInstruction: SYSTEM_PROMPT,
     });
-
-
-    const result = await model.generateContent(userMessage);
-    const replyText = result.response.text();
-
-
-    res.json({
